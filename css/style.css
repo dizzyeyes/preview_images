@@ -1,0 +1,39 @@
+
+body {
+    font-family: Monospace;
+    background-color: #f0ffff;
+    margin: 0px;
+}
+
+div >a.img img{
+    height:40%;
+}
+.main_context{
+    text-align:center;    
+    margin-left:auto;
+    margin-right:auto;
+}
+.main_context td{ 
+    padding-top:20px;
+}
+.main_context td label{ 
+    margin-left:20px;
+}
+
+form.search{  
+    position:absolute;
+    top:30%;
+    left:40%;
+}
+
+a.button img{
+    width:60px;
+    height:60px;
+}
+a.button {
+    margin-left:20px;
+    margin-right:20px;
+}
+a.button img:hover{
+    cursor:pointer;
+}
