@@ -2,9 +2,9 @@
 <?php 
 	require_once('util/slide.php');
 	require_once('util/getfilelist.php');
-	require_once('util/resizeimage.php');	
 	require_once('util/safe_get.php');	
 	require_once('util/util.php');
+	require_once('util/resizeimage.php');
 ?>
 <body >
 <script>
@@ -45,6 +45,29 @@ $prefix_server="//172.18.49.115/share/";
 $images_arr=get_images_list($prefix.$dir);
 $files_arr=get_files_list($prefix);
 $search_page='folder.php';
+?>
+
+<?php
+//generate thumb images,this will be done seperately.
+    // $cnt=0;
+    // if(!file_exists('thumb/'.$dir))
+        // mkdir('thumb/'.$dir,0777,true);
+    // foreach($images_arr as $image)
+    // {
+        // $full_image_name=$prefix.$dir.$image;    
+        
+        // $wid=1024;
+        // $hei=544;
+        // $c=0;
+        
+        // if(file_exists('thumb/'.$dir.$image))
+            // continue;
+            
+        // $dstpath='thumb/'.$dir.$image;
+        // $test= new resizeimage($full_image_name, $wid, $hei,$c,$dstpath);
+
+        // $cnt++;
+    // }
 ?>
 
 <div class="search">
@@ -132,6 +155,21 @@ full_file_name_list=[
             echo "'".$full_image_name."'";
         else
             echo ",'".$full_image_name."'";
+        $cnt++;
+    }
+?>
+];
+thumb_file_name_list=[
+<?php 
+    $cnt=0;
+    foreach($images_arr as $image)
+    {
+        $thumb_img='thumb/'.$dir.$image; 
+        if(!file_exists($thumb_img))    break;    
+        if($cnt==0)
+            echo "'".$thumb_img."'";
+        else
+            echo ",'".$thumb_img."'";
         $cnt++;
     }
 ?>

@@ -30,8 +30,17 @@
         
         imageList.href=full_file_name_list[cur_img];
         labelList.href=full_file_name_list[cur_img];
-        img.src=full_file_name_list[cur_img];
+        if(thumb_file_name_list.length==0)
+        {
+               //file not exists
+            img.src=full_file_name_list[cur_img];
+        }
+        else
+        {       //file exists               
+            img.src=thumb_file_name_list[cur_img];
+        }
         label.innerHTML=imagelist[cur_img];        
     }
+    
 </script>
 
