@@ -5,6 +5,7 @@
 	require_once('util/safe_get.php');	
 	require_once('util/util.php');
 	require_once('util/resizeimage.php');
+    
 ?>
 <body >
 <script>
@@ -161,16 +162,16 @@ full_file_name_list=[
 ];
 thumb_file_name_list=[
 <?php 
-    $cnt=0;
+    $cntth=0;
     foreach($images_arr as $image)
     {
         $thumb_img='thumb/'.$dir.$image; 
         if(!file_exists($thumb_img))    break;    
-        if($cnt==0)
+        if($cntth==0)
             echo "'".$thumb_img."'";
         else
             echo ",'".$thumb_img."'";
-        $cnt++;
+        $cntth++;
     }
 ?>
 ];
